@@ -1,4 +1,4 @@
-FROM debian:jessie-backports
+FROM debian:stable-slim
 
 ARG DEBIAN_FRONTEND=noninteractive
 
@@ -9,4 +9,3 @@ RUN apt-get update \
       apt-utils \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
-
