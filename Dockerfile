@@ -1,11 +1,7 @@
-FROM debian:stable-slim
+FROM debian:stretch-slim
 
-ARG DEBIAN_FRONTEND=noninteractive
+ENV LANG="C.UTF-8"
+ENV TERM=xterm
+RUN echo 'deb http://deb.debian.org/debian stretch-backports main' > /etc/apt/sources.list.d/backports.list
 
-RUN apt-get update \
-    && apt-get -o Dpkg::Options::=--force-confold -y dist-upgrade \
-    && apt-get install -y --no-install-recommends \
-      apt-transport-https \
-      apt-utils \
-    && apt-get clean \
-    && rm -rf /var/lib/apt/lists/*
+ONBUILD ENV DEBIAN_FRONTEND=noninteractive

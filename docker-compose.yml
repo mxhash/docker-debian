@@ -1,5 +1,5 @@
 version: "3"
 services:
   debian-base:
-    build: ./
-    image: registry.itsocks.de/library/debian-base:latest
+    build: .
+    image: gcr.io/itsocks/library/debian
