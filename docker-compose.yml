@@ -2,4 +2,4 @@ version: "3"
 services:
   debian-base:
     build: .
-    image: gcr.io/itsocks/library/debian
+    image: mxhash/debian
